@@ -4,3 +4,5 @@ var config = {
     secret: "33dee284d794b0ce" // your FlickrAPI key
   }
 };
+
+module.exports = config;
