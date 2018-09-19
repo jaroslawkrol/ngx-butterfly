@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
-import { ButterflyLibComponent } from './butterfly-lib.component';
+import {NgModule} from '@angular/core';
+import {ButterflyLibComponent} from './butterfly-lib.component';
+import {ButterflyUnitComponent} from './components/butterfly-unit/butterfly-unit.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   imports: [
+    CommonModule
   ],
-  declarations: [ButterflyLibComponent],
+  declarations: [ButterflyLibComponent, ButterflyUnitComponent],
   exports: [ButterflyLibComponent]
 })
-export class ButterflyLibModule { }
+export class ButterflyLibModule {
+}
