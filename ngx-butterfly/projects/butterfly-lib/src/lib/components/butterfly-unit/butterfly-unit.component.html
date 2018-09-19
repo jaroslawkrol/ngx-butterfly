@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card-image">
-    <figure *ngIf="!spinner" class="image">
-      <img [src]="(unit$ | async)?.src" [alt]="(unit$ | async)?.src">
+    <figure *ngIf="unit?.src" class="image">
+      <img [src]="unit?.src" [alt]="unit?.title">
     </figure>
     <div class="card-content is-overlay is-clipped">
         <span class="tag is-info">
-            {{ (unit$ | async)?.title }}
+            {{ unit?.title }}
         </span>
     </div>
   </div>

@@ -7,8 +7,8 @@ import {ButterflyUnit} from './components/butterfly-unit/butterfly-unit.componen
     <div class="columns is-multiline">
       <ngx-butterfly-unit
         class="column is-one-quarter-desktop is-half-tablet"
-        *ngFor="let unit of images"
-        [unit]="unit">
+        *ngFor="let image of images"
+        [unit]="image">
       </ngx-butterfly-unit>
     </div>
   `,

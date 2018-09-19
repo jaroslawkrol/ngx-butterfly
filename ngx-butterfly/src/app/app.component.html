@@ -36,7 +36,9 @@
 </section>
 
 <section class="hero is-ancestor">
-  <ngx-butterfly-lib>
+  <ngx-butterfly-lib
+    [images]="(images$ | async)"
+  >
   </ngx-butterfly-lib>
 </section>
 

@@ -13,18 +13,8 @@ export interface ButterflyUnit {
   templateUrl: './butterfly-unit.component.html',
   styleUrls: ['./butterfly-unit.component.scss']
 })
-export class ButterflyUnitComponent implements OnInit {
+export class ButterflyUnitComponent {
 
-  @Input('unit')
-  set setUnit(unit: ButterflyUnit) {
-    this.unitSubject.next(unit);
-  }
-
-  private unitSubject = new Subject<ButterflyUnit>();
-  public unit$: Observable<ButterflyUnit>;
-
-  constructor() {
-    this.unit$ = this.unitSubject.asObservable();
-  }
+  @Input('unit') unit: ButterflyUnit;
 
 }

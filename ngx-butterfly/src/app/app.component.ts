@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {GetImagesInitAction} from './store/images/images.action';
+import {select, Store} from '@ngrx/store';
+import * as fromRoot from './store/app-store.reducer';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ngx-butterfly-app';
+
+  images$ = this.store.pipe(
+    select(fromRoot.getImagesList)
+  );
+
+  constructor(private store: Store<fromRoot.State>) {
+  }
+
+  ngOnInit() {
+    this.store.dispatch(new GetImagesInitAction());
+  }
 }

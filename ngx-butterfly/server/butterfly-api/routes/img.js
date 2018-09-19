@@ -6,11 +6,9 @@ var http = require('http');
 /* flickr images proxy */
 router.get('/:farm/:server/:id/:secret', function (req, res) {
 
-  var generateOptions = function (params) {
-    return {
-      host: "farm" + req.params.farm + ".staticflickr.com",
-      path: "/" + req.params.server + "/" + req.params.id + "_" + req.params.secret + ".jpg"
-    }
+  var options = {
+    host: "farm" + req.params.farm + ".staticflickr.com",
+    path: "/" + req.params.server + "/" + req.params.id + "_" + req.params.secret + ".jpg"
   };
 
   var callback = function (response) {
@@ -25,7 +23,7 @@ router.get('/:farm/:server/:id/:secret', function (req, res) {
     }
   };
 
-  http.request(generateOptions, callback).end();
+  http.request(options, callback).end();
 });
 
 module.exports = router;
