@@ -23,7 +23,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss",
+              "./node_modules/bulma/bulma.sass"
             ],
             "scripts": []
           },
@@ -163,5 +164,10 @@
       }
     }
   },
-  "defaultProject": "ngx-butterfly-app"
+  "defaultProject": "ngx-butterfly-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
